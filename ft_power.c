@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 15:11:58 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/06/15 19:12:53 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/06/24 15:13:20 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/07/10 13:57:00 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+unsigned long long	ft_power(unsigned long long n, int p)
 {
-	if (!s)
-		return ;
-	ft_putstr(s, 0);
-	ft_putchar('\n');
+	unsigned long long	result;
+
+	result = 1;
+	if (p < 0)
+		return (0);
+	while (p > 0)
+	{
+		result *= n;
+		p--;
+	}
+	return (result);
 }

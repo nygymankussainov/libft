@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/19 15:11:58 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/06/15 19:12:53 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/06/25 11:07:30 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/06/25 11:35:40 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_swap(int *a, int *b)
 {
-	if (!s)
-		return ;
-	ft_putstr(s, 0);
-	ft_putchar('\n');
+	int c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }
