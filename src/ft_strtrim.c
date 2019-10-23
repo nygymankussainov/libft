@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/21 14:28:47 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/06/25 17:47:44 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/04/19 11:37:43 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/08/03 18:26:26 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_count_digit(unsigned long long n, int len)
-{
-	while (n / 10)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
-
-char		*ft_itoa(unsigned long long n)
+char			*ft_strtrim(char const *s)
 {
 	char	*result;
-	int		len;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	len = ft_count_digit(n, 1);
-	if (!(result = ft_memalloc(len + 1)))
+	i = 0;
+	k = 0;
+	if (!s)
 		return (NULL);
-	result[len--] = '\0';
-	while (len >= 0)
+	j = ft_strlen(s) - 1;
+	i = ft_skip_whitesp(s);
+	if (!s[i])
+		return (ft_strnew(0));
+	while (s[j] == ' ' || s[j] == '\t' || s[j] == '\n')
+		j--;
+	if (!(result = ft_memalloc(j - i + 2)))
+		return (NULL);
+	while (i <= j)
 	{
-		result[len--] = (n % 10) + '0';
-		n /= 10;
+		result[k] = s[i];
+		k++;
+		i++;
 	}
+	result[k] = '\0';
 	return (result);
 }

@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhazelnu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 20:34:01 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/04/26 20:47:03 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/04/12 16:45:11 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/10/14 13:36:55 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+char	*ft_strnew(size_t size)
 {
-	char	*result;
-	size_t	i;
-	size_t	j;
+	char	*s;
 
-	i = 0;
-	j = 0;
-	while (s1[i] && i < n)
-		i++;
-	if (!(result = ft_memalloc(i + 1)))
+	if ((size + 1 == 0) || !(s = ft_memalloc(size + 1)))
 		return (NULL);
-	while (s1[j] && j < n)
-	{
-		result[j] = s1[j];
-		j++;
-	}
-	result[j] = '\0';
-	return (result);
+	return (s);
 }

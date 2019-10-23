@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhazelnu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/09 19:52:45 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/04/24 20:54:08 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/04/15 16:45:23 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/10/08 14:33:35 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*result;
 
-	i = 0;
-	while (src[i] && i < len)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	if (!s || (len + 1 == 0) || !len ||
+			!(result = ft_memalloc(len + 1)))
+		return (NULL);
+	result = ft_strncpy(result, s + start, len);
+	return (result);
 }

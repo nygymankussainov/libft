@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   iswhitesp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhazelnu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/09 19:32:06 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/04/27 13:18:12 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/07/29 22:08:42 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/08/03 18:21:17 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int		iswhitesp(char c)
 {
-	size_t i;
-
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	return (c == ' ' || c == '\n' || c == '\r' ||
+				c == '\t' || c == '\v' || c == '\f');
 }

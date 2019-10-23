@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_revstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vhazelnu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vhazelnu <vhazelnu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 15:18:54 by vhazelnu          #+#    #+#             */
-/*   Updated: 2019/04/18 13:10:40 by vhazelnu         ###   ########.fr       */
+/*   Created: 2019/06/25 11:09:37 by vhazelnu          #+#    #+#             */
+/*   Updated: 2019/07/31 16:06:22 by vhazelnu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+char	*ft_revstr(char *str)
 {
-	return (c >= '0' && c <= '9');
+	int		i;
+	char	c;
+	char	*result;
+
+	result = str;
+	i = ft_strlen(str);
+	while (i >= 2)
+	{
+		c = *str;
+		*str = str[i - 1];
+		str[i - 1] = c;
+		str++;
+		i -= 2;
+	}
+	return (result);
 }
