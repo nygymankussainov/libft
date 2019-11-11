@@ -2,16 +2,16 @@
 
 Re-coded functions from such libraries like:
 
--string.h
+string.h
 
--unistd.h
+unistd.h
 
--stdlib.h
+stdlib.h
 
--sys/types.h
+sys/types.h
 
--sys/uio.h
+sys/uio.h
 
--unistd.h
+unistd.h
 
--fcntl.h
+fcntl.h
