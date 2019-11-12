@@ -4,7 +4,7 @@
 	of popular C libraries work "under the hood".
 	This custom library will be used for many further projects.
 
-**Re-coded functions from such libraries like:**
+**Re-coded functions from the following libraries:**
 
 - string.h
 - unistd.h
