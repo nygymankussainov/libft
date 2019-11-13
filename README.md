@@ -6,10 +6,10 @@ This custom library will be used for many further projects.
 
 **Re-coded functions from the following libraries:**
 
-`string.h`
-`unistd.h`
-`stdlib.h`
-`sys/types.h`
-`sys/uio.h`
-`unistd.h`
-`fcntl.h`
+`- string.h`
+`- unistd.h`
+`- stdlib.h`
+`- sys/types.h`
+`- sys/uio.h`
+`- unistd.h`
+`- fcntl.h`
